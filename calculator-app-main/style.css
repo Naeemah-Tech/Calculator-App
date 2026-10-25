@@ -1,0 +1,315 @@
+:root,
+[data-theme="1"] {
+  --bg-main: hsl(222, 26%, 31%);
+  --bg-toggle-keypad: hsl(223, 31%, 20%);
+  --bg-screen: hsl(224, 36%, 15%);
+
+  /* Number Keys */
+  --key-bg-num: hsl(30, 25%, 89%);
+  --key-shadow-num: hsl(28, 16%, 65%);
+  --key-hover-num: hsl(0, 0%, 100%);
+
+  /* Primary Action Keys (DEL, RESET) */
+  --key-bg-primary: hsl(225, 21%, 49%);
+  --key-shadow-primary: hsl(224, 28%, 35%);
+  --key-hover-primary: hsl(225, 52%, 70%);
+
+  /* Secondary Action Key (=) */
+  --key-bg-secondary: hsl(6, 63%, 50%);
+  --key-shadow-secondary: hsl(6, 70%, 34%);
+  --key-hover-secondary: hsl(6, 93%, 65%);
+
+  /* Text Colors */
+  --text-primary: hsl(0, 0%, 100%);
+  --text-secondary: hsl(221, 14%, 31%);
+  --text-white: hsl(0, 0%, 100%);
+}
+
+/* Theme 2 - Light / Gray */
+[data-theme="2"] {
+  --bg-main: hsl(0, 0%, 90%);
+  --bg-toggle-keypad: hsl(0, 5%, 81%);
+  --bg-screen: hsl(0, 0%, 93%);
+
+  /* Number Keys */
+  --key-bg-num: hsl(45, 7%, 89%);
+  --key-shadow-num: hsl(35, 11%, 61%);
+  --key-hover-num: hsl(0, 0%, 100%);
+
+  /* Primary Action Keys (DEL, RESET) */
+  --key-bg-primary: hsl(185, 42%, 37%);
+  --key-shadow-primary: hsl(185, 58%, 25%);
+  --key-hover-primary: hsl(185, 42%, 55%);
+
+  /* Secondary Action Key (=) */
+  --key-bg-secondary: hsl(25, 98%, 40%);
+  --key-shadow-secondary: hsl(25, 99%, 27%);
+  --key-hover-secondary: hsl(25, 100%, 60%);
+
+  /* Text Colors */
+  --text-primary: hsl(60, 10%, 19%);
+  --text-secondary: hsl(60, 10%, 19%);
+  --text-white: hsl(0, 0%, 100%);
+}
+
+/* Theme 3 - Dark Violet */
+[data-theme="3"] {
+  --bg-main: hsl(268, 75%, 9%);
+  --bg-toggle-keypad: hsl(268, 71%, 12%);
+  --bg-screen: hsl(268, 71%, 12%);
+
+  /* Number Keys */
+  --key-bg-num: hsl(268, 47%, 21%);
+  --key-shadow-num: hsl(290, 70%, 36%);
+  --key-hover-num: hsl(268, 54%, 35%);
+
+  /* Primary Action Keys (DEL, RESET) */
+  --key-bg-primary: hsl(281, 89%, 26%);
+  --key-shadow-primary: hsl(285, 91%, 52%);
+  --key-hover-primary: hsl(281, 89%, 40%);
+
+  /* Secondary Action Key (=) */
+  --key-bg-secondary: hsl(176, 100%, 44%);
+  --key-shadow-secondary: hsl(177, 92%, 70%);
+  --key-hover-secondary: hsl(176, 100%, 75%);
+
+  /* Text Colors */
+  --text-primary: hsl(52, 100%, 62%);
+  --text-secondary: hsl(52, 100%, 62%);
+  --text-dark-blue: hsl(198, 20%, 13%);
+  --text-white: hsl(0, 0%, 100%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    background-color: var(--bg-main);
+}
+
+header, main, footer{
+    max-width: 450px;
+    margin: auto;
+}
+
+.calculator-header{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    color: var(--text-primary);
+}
+
+.theme-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: end;
+    gap: 1.5rem;
+}
+
+.theme-label{
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.theme-switcher{
+    display: block;
+    width: 60px;
+}
+
+.theme-numbers{
+    position: relative;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 4px;
+}
+
+.switch-track{
+    background-color: var(--bg-toggle-keypad);
+    width: 100%;
+    height: 20px;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.switch-knob{
+    background-color: var(--key-bg-secondary);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+[data-theme = "1"] .switch-knob{
+    transform: translateX(0px);
+}
+
+[data-theme = "2"] .switch-knob{
+    transform: translateX(16px);
+}
+
+[data-theme = "3"] .switch-knob{
+    transform: translateX(36px);
+}
+
+.calc-screen{
+    position: relative;
+    width: 100%;
+    height: 7rem;
+    border: none;
+    border-radius: 0.6rem;
+    background-color: var(--bg-screen);
+    padding: 0.75rem 2rem;
+    font-size: 3.5rem;
+    text-align: right;
+    color: var(--text-primary);
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 500;
+    outline: none;
+}
+
+.calc-screen::-webkit-inner-spin-button,
+.calc-screen::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.calculator-keypad{
+    background-color: var(--bg-toggle-keypad);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 0.6rem;
+}
+
+button.keys{
+    font-family: 'League Spartan', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    border-radius: 13px;
+    padding: 1rem;
+}
+
+button.reset, button.equal{
+    grid-column: span 2;
+}
+
+button.number-keys, .operator-keys{
+    background-color: var(--key-bg-num);
+    color: var(--text-secondary);
+    box-shadow: 0 4px var(--key-shadow-num);
+}
+
+button.number-keys:hover, button.operator-keys:hover{
+    background-color: var(--key-hover-num);
+}
+
+button.number-keys:active, button.operator-keys:active{
+    transform: translateY(2px);
+    box-shadow: 0 1px var(--key-shadow-primary);
+}
+
+button.delete, button.reset{
+    background-color: var(--key-bg-primary);
+    color: var(--text-white);
+    box-shadow: 0 4px var(--key-shadow-primary);
+}
+
+button.delete:hover, button.reset:hover{
+    background-color: var(--key-hover-primary);
+}
+
+button.delete:active, button.reset:active{
+    transform: translateY(2px);
+    box-shadow: 0 1px var(--key-shadow-primary);
+}
+
+button.equal{
+    background-color: var(--key-bg-secondary);
+    color: var(--text-white);
+    box-shadow: 0 4px var(--key-shadow-secondary);
+}
+
+button.equal:hover{
+    background-color: var(--key-hover-secondary);
+}
+
+button.equal:active{
+    transform: translateY(2px);
+    box-shadow: 0 1px var(--key-shadow-secondary);
+}
+
+button.keys{
+    transition: all 0.3s;
+}
+
+button.keys:active{
+    transform: translateY(2px);
+}
+
+button.keys:focus-visible{
+    outline: 1px solid var(--text-white);
+    outline-offset: 2px;
+}
+
+main{
+    margin-bottom: 1rem;
+}
+
+footer{
+    position: absolute;
+    bottom: 0.5rem;
+    margin: auto;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px)  {
+    header, main, footer{
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .calculator-keypad{
+        grid-template-columns: repeat(4, 1fr);
+        
+    }
+
+    button.keys{
+        border-radius: 5px;
+        text-align: center;
+        width: 62px;
+        column-gap: 0px;
+    }
+
+    button.delete{
+        text-align: center;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    button.reset, button.equal{
+        width: initial;
+    }
+
+    .attribution{
+        bottom: -4.5rem;
+    }
+}

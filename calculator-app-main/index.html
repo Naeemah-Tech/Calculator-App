@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <header class="calculator-header">
+    <h1 class="logo">calc</h1>
+
+    <div class="theme-container">
+      <span class="theme-label">THEME</span>
+      
+      <div class="theme-switcher">
+        <div class="theme-numbers">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </div>
+
+        <div class="switch-track" role="button" tabindex="0">
+          <div class="switch-knob"></div>
+        </div>
+      </div>
+
+      <div class="theme-switch">
+        <div class="switch-slider"></div>
+      </div>
+      
+    </div>
+  </header>
+
+  <main>
+    <input id="display" class="calc-screen" type="text" aria-readonly="true" readonly>
+
+    <div id="keypad" class="calculator-keypad">
+      <button onclick="appendToDisplay('7')" type="button" aria-pressed="false" class="number-keys keys">7</button>
+      <button onclick="appendToDisplay('8')" type="button" aria-pressed="false" class="number-keys keys">8</button>
+      <button onclick="appendToDisplay('9')" type="button" aria-pressed="false" class="number-keys keys">9</button>
+      <button onclick="deleteFigure()" type="button" aria-pressed="false" id="del-key" class="secondary-keys delete keys">DEL</button>
+
+      <button onclick="appendToDisplay('4')" type="button" aria-pressed="false" class="number-keys keys">4</button>
+      <button onclick="appendToDisplay('5')" type="button" aria-pressed="false" class="number-keys keys">5</button>
+      <button onclick="appendToDisplay('6')" type="button" aria-pressed="false" class="number-keys keys">6</button>
+      <button onclick="appendToDisplay('+')" type="button" aria-pressed="false" id="plus-key" class="operator-keys add keys">+</button>
+
+      <button onclick="appendToDisplay('1')" type="button" aria-pressed="false" class="number-keys keys">1</button>
+      <button onclick="appendToDisplay('2')" type="button" aria-pressed="false" class="number-keys keys">2</button>
+      <button onclick="appendToDisplay('3')" type="button" aria-pressed="false" class="number-keys keys">3</button>
+      <button onclick="appendToDisplay('-')" type="button" aria-pressed="false" id="minus-key" class="operator-keys subtract keys">-</button>
+
+      <button onclick="appendToDisplay('.')" type="button" aria-pressed="false" id="decimal-key" class="operator-keys decimal keys">.</button>
+      <button onclick="appendToDisplay('0')" type="button" aria-pressed="false" class="number-keys keys">0</button>
+      <button onclick="appendToDisplay('/')" type="button" aria-pressed="false" id="divide-key" class="operator-keys divide keys">/</button>
+
+      <button onclick="appendToDisplay('x')" type="button" aria-pressed="false" id="multiply-key" class="operator-keys multiply keys">x</button>
+
+      <button onclick="clearDisplay()" type="button" aria-pressed="false" id="reset-key" class="secondary-keys reset keys">RESET</button>
+
+      <button onclick="calculate()" type="button" aria-pressed="false" id="equal-key" class="secondary-keys equal keys">=</button>
+    </div>
+
+  </main>
+
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

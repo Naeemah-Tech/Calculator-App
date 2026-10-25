@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL:(https://github.com/Naeemah-Tech/Calculator-App/)
+- Live Site URL: ([https://your-live-site-url.com](https://calculator-app-main-weld.vercel.app/))
 
 ## My process
 

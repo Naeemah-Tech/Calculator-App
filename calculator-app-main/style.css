@@ -101,7 +101,7 @@ header, main, footer{
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     margin-top: 4rem;
     color: var(--text-primary);
 }
@@ -109,7 +109,7 @@ header, main, footer{
 .theme-container{
     display: grid;
     grid-template-columns: auto auto;
-    align-items: end;
+    align-items: self-end;
     gap: 1.5rem;
 }
 
@@ -151,7 +151,7 @@ header, main, footer{
     position: absolute;
     top: 3px;
     left: 5px;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 [data-theme = "1"] .switch-knob{
@@ -285,6 +285,14 @@ footer{
     header, main, footer{
         max-width: 350px;
         margin: auto;
+    }
+
+    .switch-track{
+        height: 25px;
+    }
+
+    .switch-knob{
+        top: 5px;
     }
 
     .calculator-keypad{
